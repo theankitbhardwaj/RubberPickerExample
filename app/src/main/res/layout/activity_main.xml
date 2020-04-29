@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cardview_dark_background"
+    tools:context=".MainActivity">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:elevation="6dp"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/price_range"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="17dp"
+                android:layout_marginEnd="161dp"
+                android:fontFamily="@font/baloo_bhai"
+                android:text="Price Range : "
+                android:textColor="@android:color/black"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/price_range_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/price_range"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="25dp"
+                android:layout_toEndOf="@id/relativeLayout"
+                android:fontFamily="@font/baloo_bhai"
+                android:text="₹"
+                android:textColor="@android:color/holo_green_dark"
+                android:textSize="24sp"
+                tools:ignore="NotSibling" />
+
+            <TextView
+                android:id="@+id/to"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/price_range"
+                android:layout_alignBaseline="@id/price_range_left"
+                android:layout_marginStart="30dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="25dp"
+                android:layout_toEndOf="@+id/price_range_left"
+                android:fontFamily="@font/baloo_bhai"
+                android:text="to"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/price_range_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/price_range"
+                android:layout_alignBaseline="@id/price_range_left"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="25dp"
+                android:layout_toEndOf="@id/to"
+                android:fontFamily="@font/baloo_bhai"
+                android:text="₹"
+                android:textColor="@android:color/holo_green_dark"
+                android:textSize="24sp" />
+
+            <com.jem.rubberpicker.RubberRangePicker
+                android:id="@+id/rubberpicker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:minValue="1000"
+                app:maxValue="100000"
+                app:elasticBehavior="cubic"
+                app:dampingRatio="0.4"
+                app:stiffness="50"
+                app:stretchRange="36dp"
+                app:normalTrackWidth="4dp"
+                app:highlightTrackWidth="4dp"
+                app:normalTrackColor="#AAAAAA"
+                app:highlightDefaultThumbOnTouchColor="#5879C1"
+                android:layout_below="@id/price_range_left"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="50dp"
+                app:highlightTrackColor="@android:color/holo_green_dark"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginBottom="50dp"
+                android:layout_toEndOf="@id/relativeLayout"
+                android:layout_above="@id/relativeLayout"
+                tools:ignore="NotSibling" />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
